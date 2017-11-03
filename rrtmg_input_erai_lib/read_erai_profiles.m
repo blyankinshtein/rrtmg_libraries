@@ -1,6 +1,6 @@
 function [p, t, q, o3] = read_erai_profiles(filename, lat, lon, first_day, last_day) %#ok<STOUT,INUSD>
 % reads pressure hPa, temperature K, wv volume mixing ratio, ozone volume mixing ratio profiles
-% form ERA Interim for the given day range over the given station (1-10)
+% form ERA Interim for the given day range over the given location
     p = double(ncread(filename, 'level'))'; % "millibars" ; "pressure_level" ;
     p = flip(p);
     for var_name = {'t', 'q', 'o3'}

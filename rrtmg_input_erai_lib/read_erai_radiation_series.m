@@ -1,4 +1,6 @@
 function [time, rad] = read_erai_radiation_series(erai_filename, lat, lon, first_day, last_day, varname)
+%reads erai radiation flux time series in the given time range over the
+%given location and converts it to Wm-2
     time = ncread(erai_filename, 'time');
     f_day = find((datenum(datetime([first_day 3 0 0]))-datenum(datetime([1900 01 01 0 0 0])))*24 == time);
     l_day = find((datenum(datetime([last_day 23 59 60]))-datenum(datetime([1900 01 01 0 0 0])))*24 == time);
