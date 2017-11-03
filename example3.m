@@ -38,11 +38,8 @@ falbedo = read_erai_forecast_var(erai_filename_falbedo, 'fal', lat, lon, first_d
 albedo = cat(1, falbedo(1), falbedo(1:length(falbedo)-2));
 %% initialize clouds with CERES or zeros
 if clouds == 1
-    [~, cc, ciwc, clwc] = read_erai_clouds(erai_profile_filename, lat, lon, first_day, last_day);
     ceres_filename = ['ceres/CERES_SYN1deg-3H_Terra-Aqua-MODIS_Ed3A_Subset_', year, month, '01-', year, month,'31_clouds_re.nc'];
-    [rle, rie] = read_ceres_clouds(ceres_filename, p, lat, lon, first_day, last_day, 1, station_name);
-    rle = rle(:, 1:2:size(rle,2))';
-    rie = rie(:, 1:2:size(rie,2))';
+    [cc, ciwc, clwc, rle, rie] = model_cloud_input(erai_profile_filename, ceres_filename, lat, lon, first_day, last_day, p, station_name);
 else
     var_names = {'cc', 'ciwc', 'clwc', 'rle', 'rie'};
     for k = 1 : length(var_names)
