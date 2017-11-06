@@ -1,4 +1,5 @@
 function delta = solar_declination_angle(juldat)
+% adapted from http://www.psa.es/sdg/sunpos.htm
     omega = 2.1429 - 0.0010394594 * juldat;
     mean_longitude = 4.8950630 + 0.017202791698 * juldat;
     mean_anomaly = 6.2400600 + 0.0172019699 * juldat;

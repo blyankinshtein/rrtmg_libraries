@@ -26,7 +26,7 @@ http://apps.ecmwf.int/datasets/data/interim-full-daily/
 
 -- erai-8xdaily_N80_N45_W50_W180_200101_falbedo.nc - example of dataset of forecast albedo, 3-hourly resolution
 
--- erai-8xdaily_N80_N45_W50_W180_200101_radiation.nc (optional) - example of dataset of solar and thermal radiation flux variables
+-- erai-8xdaily_N80_N45_W50_W180_200101_radiation.nc (optional) - example of dataset of solar and thermal radiation flux variables, 3-hourly resolution
 
 - rrtmg: executable files of Rapid Radiative Transfer Model
 - rrtmg_input_erai_lib: library of matlab functions for reading from all the above indicated datasets
@@ -36,3 +36,4 @@ http://apps.ecmwf.int/datasets/data/interim-full-daily/
 - example1.m: example of reading data with rrtmg_input_erai_lib and running RRTMG with rrtmg_lib
 - example2.m: example of reading data from a textfile profile_jan_0.inc and running RRTMG with rrtmg_lib
 - example3.m: example of reading data with rrtmg_input_erai_lib and running radiative-equilibrium single-column model with rrtmg_lib
+- 20171024_bliankinshtein_RRTMG_validation_report.pdf: report on validation of RRTMG with ERA Interim data
